@@ -69,7 +69,8 @@
     CGSize containerSize = self.yb_containerSize(orientation);
     UIEdgeInsets padding = YBIBPaddingByBrowserOrientation(orientation);
     
-    self.topView.frame = CGRectMake(padding.left, padding.top, containerSize.width - padding.left - padding.right, [YBIBTopView defaultHeight]);
+//    self.topView.frame = CGRectMake(padding.left, padding.top, containerSize.width - padding.left - padding.right, [YBIBTopView defaultHeight]);
+    self.topView.frame = CGRectMake(padding.left, containerSize.height - padding.bottom - [YBIBTopView defaultHeight], containerSize.width - padding.left - padding.right, [YBIBTopView defaultHeight]);
 }
 
 - (void)showSheetView {

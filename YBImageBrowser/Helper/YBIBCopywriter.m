@@ -42,7 +42,7 @@
 
 - (void)initCopy {
     BOOL en = self.type == YBIBCopywriterTypeEnglish;
-    
+    en = YES;
     self.videoIsInvalid = en ? @"Video is invalid" : @"视频无效";
     self.videoError = en ? @"Video error" : @"视频错误";
     self.unableToSave = en ? @"Unable to save" : @"无法保存";

@@ -33,7 +33,10 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     CGFloat height = self.bounds.size.height, width = self.bounds.size.width;
-    self.pageLabel.frame = CGRectMake(16, 0, width / 3, height);
+//    self.pageLabel.frame = CGRectMake(16, 0, width / 3, height);
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGSize screenSize = screenRect.size;
+    self.pageLabel.frame = CGRectMake(0, -(screenSize.height-height-YBIBStatusbarHeight()-YBIBSafeAreaBottomHeight()), width, height);
     CGFloat buttonWidth = 54;
     self.operationButton.frame = CGRectMake(width - buttonWidth, 0, buttonWidth, height);
 }
@@ -89,7 +92,7 @@
         _pageLabel = [UILabel new];
         _pageLabel.textColor = [UIColor whiteColor];
         _pageLabel.font = [UIFont boldSystemFontOfSize:16];
-        _pageLabel.textAlignment = NSTextAlignmentLeft;
+        _pageLabel.textAlignment = NSTextAlignmentCenter;
         _pageLabel.adjustsFontSizeToFitWidth = YES;
     }
     return _pageLabel;
